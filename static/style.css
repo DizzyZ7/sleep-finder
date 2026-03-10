@@ -1,14 +1,26 @@
 body{
 font-family:Arial;
 padding:40px;
+background:#f6f6f6;
 }
 
 .filters{
-margin-bottom:20px;
+margin-bottom:30px;
+}
+
+input{
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:10px 20px;
 }
 
 .card{
-border:1px solid #ddd;
-padding:15px;
-margin:10px;
+background:white;
+padding:20px;
+margin:15px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }

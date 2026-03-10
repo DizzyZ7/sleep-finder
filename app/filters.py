@@ -1,16 +1,16 @@
-def filter_products(products, weight=None, height=None, price=None):
+def apply_filters(data, price=None, height=None, weight=None):
 
     result = []
 
-    for p in products:
+    for p in data:
 
-        if weight and p["max_weight"] < weight:
+        if price and int(p["price"].replace(" ","")) > price:
             continue
 
         if height and p["height"] != height:
             continue
 
-        if price and p["price"] > price:
+        if weight and p["max_weight"] < weight:
             continue
 
         result.append(p)

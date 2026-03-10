@@ -1,21 +1,28 @@
 async function search(){
 
-let w=document.getElementById("weight").value
-let h=document.getElementById("height").value
-let p=document.getElementById("price").value
+let price=document.getElementById("price").value
+let height=document.getElementById("height").value
+let weight=document.getElementById("weight").value
 
-let res=await fetch(`/api/filter?weight=${w}&height=${h}&price=${p}`)
+let r=await fetch(`/api/filter?price=${price}&height=${height}&weight=${weight}`)
 
-let data=await res.json()
+let data=await r.json()
 
 let html=""
 
-data.forEach(item=>{
+data.forEach(p=>{
+
 html+=`
 <div class="card">
-<h3>${item.name}</h3>
-<p>Цена: ${item.price}</p>
-<p>Высота: ${item.height} см</p>
+
+<img src="${p.image}" width="200">
+
+<h3>${p.name}</h3>
+
+<p>${p.price}</p>
+
+<a href="${p.link}" target="_blank">Открыть</a>
+
 </div>
 `
 })
